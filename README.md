@@ -151,30 +151,13 @@
 
 <hr />
 
-<h2>Additional Resources</h2>
-
-<h3>Tools:</h3>
-<ul>
-  <li><a href="https://remix.ethereum.org/" target="_blank">Remix IDE</a>: A browser-based Solidity IDE.</li>
-  <li><a href="https://metamask.io/" target="_blank">MetaMask</a>: A crypto wallet for interacting with Ethereum.</li>
-  <li><a href="https://openzeppelin.com/" target="_blank">OpenZeppelin</a>: A library for secure smart contract development.</li>
-</ul>
-
-<h3>Documentation:</h3>
-<ul>
-  <li><a href="https://ethereum.org/en/developers/docs/" target="_blank">Ethereum Developer Documentation</a>.</li>
-  <li><a href="https://soliditylang.org/" target="_blank">Solidity Documentation</a>.</li>
-  <li><a href="https://docs.openzeppelin.com/" target="_blank">OpenZeppelin Documentation</a>.</li>
-</ul>
-
-<hr />
 
 <h2>Final Thoughts</h2>
 
 <p>Blockchain and Ethereum development are exciting fields with endless possibilities. By understanding these key terms and concepts, you’re well on your way to becoming a proficient blockchain developer. Keep learning, experimenting, and building! 🚀</p>
 <h1>Campus Tour Workshop: Deploy Your Own Tokens</h1>
 
-<p>Welcome to our <strong>Two-Day Educational Workshop</strong>! Over the next two days, you’ll learn how to create and deploy your own ERC-20 (fungible) and ERC-721 (non-fungible) tokens on the Ethereum blockchain. No prior experience is required—just bring your curiosity and enthusiasm!</p>
+<p>Welcome to our <strong> Educational Workshop</strong>! Over the next two days, you’ll learn how to create and deploy your own ERC-20 (fungible) and ERC-721 (non-fungible) tokens on the Ethereum blockchain. No prior experience is required—just bring your curiosity and enthusiasm!</p>
 
 <hr />
 
