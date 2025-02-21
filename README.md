@@ -4,7 +4,7 @@
 
 <hr />
 
-<h2>Day 1: Deploying Your Own ERC-20 Token</h2>
+<h2> Deploying Your Own ERC-20 Token</h2>
 
 <details>
 <summary><strong>What is an ERC-20 Token?</strong></summary>
@@ -70,7 +70,7 @@ contract MyToken is ERC20 {
 
 <hr />
 
-<h2>Day 2: Deploying Your Own ERC-721 Token</h2>
+<h2> Deploying Your Own ERC-721 Token</h2>
 
 <details>
 <summary><strong>What is an ERC-721 Token?</strong></summary>
