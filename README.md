@@ -1,4 +1,4 @@
-<div align="center" ><img width="350px" src="https://github.com/eben619/Zero-To-Dapp-Workshop/blob/main/universityOfGhana.svg"></div>
+<div align="center" ><img width="350px" src="https://github.com/ETHAccra/Zero-To-Dapp-University-Campus-Tour/blob/main/ETHAccra-LogoFiles_PrimaryBadge.png"></div>
 
 <h2>Additional Resources</h2>
 <h3>Useful Links:</h3>
