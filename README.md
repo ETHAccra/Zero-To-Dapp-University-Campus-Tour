@@ -152,7 +152,7 @@
 </details>
 
 <hr />
-
+<h2>Introduction To Solidity</h2>
 <details>
 <summary><strong> Solidity Fundamentals</strong></summary><br>
 
