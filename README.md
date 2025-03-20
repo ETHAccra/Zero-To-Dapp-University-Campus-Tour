@@ -1,7 +1,11 @@
 <div align="center" ><img width="350px" src="https://github.com/eben619/Zero-To-Dapp-Workshop/blob/main/universityOfGhana.svg"></div>
 
 <h2>Additional Resources</h2>
+<h3>Useful Links:</h3>
+<ul>
+  <li><a href="https://cloud.google.com/application/web3/faucet/ethereum/sepolia" target="_blank">Ethereum Sepolia Faucet</a></li>
 
+</ul>
 <h3>Presentation:</h3>
 <ul>
   <li><a href="https://docs.google.com/presentation/d/1GsH-hoath5B_ua9r4xmvySFhFWy9rOBe/edit?usp=sharing&ouid=109207709370381780005&rtpof=true&sd=true" target="_blank">ETHAccra Presentation</a></li>
