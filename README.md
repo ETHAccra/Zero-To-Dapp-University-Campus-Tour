@@ -326,10 +326,6 @@ function getBalance() public view returns (uint256) {
 
 <hr />
 
-
-<h2>Final Thoughts</h2>
-
-<p>Blockchain and Ethereum development are exciting fields with endless possibilities. By understanding these key terms and concepts, you’re well on your way to becoming a proficient blockchain developer. Keep learning, experimenting, and building! 🚀</p>
 <h1>Campus Tour Workshop: Deploy Your Own Tokens</h1>
 
 <p>Welcome to our <strong> Educational Workshop</strong>! Over the next two days, you’ll learn how to create and deploy your own ERC-20 (fungible) and ERC-721 (non-fungible) tokens on the Ethereum blockchain. No prior experience is required—just bring your curiosity and enthusiasm!</p>
