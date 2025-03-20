@@ -164,8 +164,6 @@
 - Variables: State variables, local variables, and constants.
 - Functions: Visibility (`public`, `private`, `internal`, `external`), and modifiers.
 
-<h1> Solidity Fundamentals</h1>
-
 <h2>1. Basic Structure of a Solidity Contract</h2>
 <p>A Solidity smart contract starts with the <code>pragma</code> directive, followed by the contract definition. Solidity contracts contain functions, variables, and logic that define how they interact on the blockchain.</p>
 <pre><code>
@@ -305,12 +303,8 @@ function getBalance() public view returns (uint256) {
 }
 </code></pre>
 
-
-
-
 ### Materials:
 - **Book**: *Mastering Ethereum* (Chapter 7: Smart Contracts and Solidity).
-- **Practice**: Write a simple "Hello World" contract in Remix IDE.
 
 </details>
 
