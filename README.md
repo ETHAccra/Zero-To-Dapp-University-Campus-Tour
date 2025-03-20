@@ -2,6 +2,13 @@
 
 <h2>Additional Resources</h2>
 
+<h3>Presentation:</h3>
+<ul>
+  <li><a href="https://remix.ethereum.org/" target="_blank">ETHAccra Presentation</a></li>
+  <li><a href="https://metamask.io/" target="_blank">Remix IDE Presentation</a></li>
+  <li><a href="https://openzeppelin.com/" target="_blank">The Graph Presentation</a></li>
+</ul>
+
 <h3>Tools:</h3>
 <ul>
   <li><a href="https://remix.ethereum.org/" target="_blank">Remix IDE</a>: A browser-based Solidity IDE.</li>
