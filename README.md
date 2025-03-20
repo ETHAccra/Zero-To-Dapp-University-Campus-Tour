@@ -156,28 +156,15 @@
 <details>
 <summary><strong> Solidity Fundamentals</strong></summary><br>
 
-WEEK 2 PRESENTATION
-
-https://docs.google.com/presentation/d/1etS78gVlWwDJBgpt2-aomsntDFG8mUpQ/edit?usp=sharing&ouid=109207709370381780005&rtpof=true&sd=true
 
 
-REMIX PRESENTATION
-
-https://docs.google.com/presentation/d/1UkdDAZYwNiS0rGIkdulOonFH6FDs4z9smaaj5iDim1s/edit#slide=id.g12e1023695a_0_0
-
-SEPOLIA FAUCET
-
-https://cloud.google.com/application/web3/faucet/ethereum/sepolia
-
-
-
-### Topics Covered:
+### Topics To be Covered:
 - Basic syntax and structure of a Solidity contract.
 - Data types: `uint`, `address`, `bool`, `string`, etc.
 - Variables: State variables, local variables, and constants.
 - Functions: Visibility (`public`, `private`, `internal`, `external`), and modifiers.
 
-<h1>Solidity Mondays: Solidity Fundamentals</h1>
+<h1> Solidity Fundamentals</h1>
 
 <h2>1. Basic Structure of a Solidity Contract</h2>
 <p>A Solidity smart contract starts with the <code>pragma</code> directive, followed by the contract definition. Solidity contracts contain functions, variables, and logic that define how they interact on the blockchain.</p>
@@ -209,7 +196,7 @@ contract MyFirstContract {
 <p>Functions define the behavior of a smart contract. They can be public, private, view (read-only), or payable (can receive Ether).</p>
 <pre><code>
 function getName() public pure returns (string memory) {
-    return "Solidity Mondays"; // Returns a fixed string
+    return "KNUST_Tour"; // Returns a fixed string
 }
 </code></pre>
 
