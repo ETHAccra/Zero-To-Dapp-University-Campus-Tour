@@ -153,6 +153,180 @@
 
 <hr />
 
+<details>
+<summary><strong>Week 2: Solidity Fundamentals</strong></summary><br>
+
+WEEK 2 PRESENTATION
+
+https://docs.google.com/presentation/d/1etS78gVlWwDJBgpt2-aomsntDFG8mUpQ/edit?usp=sharing&ouid=109207709370381780005&rtpof=true&sd=true
+
+
+REMIX PRESENTATION
+
+https://docs.google.com/presentation/d/1UkdDAZYwNiS0rGIkdulOonFH6FDs4z9smaaj5iDim1s/edit#slide=id.g12e1023695a_0_0
+
+SEPOLIA FAUCET
+
+https://cloud.google.com/application/web3/faucet/ethereum/sepolia
+
+
+
+### Topics Covered:
+- Basic syntax and structure of a Solidity contract.
+- Data types: `uint`, `address`, `bool`, `string`, etc.
+- Variables: State variables, local variables, and constants.
+- Functions: Visibility (`public`, `private`, `internal`, `external`), and modifiers.
+
+<h1>Solidity Mondays: Solidity Fundamentals</h1>
+
+<h2>1. Basic Structure of a Solidity Contract</h2>
+<p>A Solidity smart contract starts with the <code>pragma</code> directive, followed by the contract definition. Solidity contracts contain functions, variables, and logic that define how they interact on the blockchain.</p>
+<pre><code>
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19; // Specifies the Solidity version
+
+contract MyFirstContract {
+    // Contract content goes here
+}
+</code></pre>
+
+<h2>2. Data Types in Solidity</h2>
+<h3>Value Types</h3>
+<ul>
+    <li><strong>Boolean (<code>bool</code>)</strong>: Stores <code>true</code> or <code>false</code>.</li>
+    <li><strong>Unsigned Integer (<code>uint</code>)</strong>: Represents non-negative integers.</li>
+    <li><strong>Signed Integer (<code>int</code>)</strong>: Stores positive and negative integers.</li>
+    <li><strong>Address (<code>address</code>)</strong>: Stores Ethereum addresses.</li>
+    <li><strong>Bytes (<code>bytes1</code> to <code>bytes32</code>)</strong>: Used for cryptographic operations.</li>
+    <li><strong>String (<code>string</code>)</strong>: Used for storing text.</li>
+</ul>
+
+<h2>3. Functions in Solidity</h2>
+
+***Basic Structure Of A function***<br>
+<img src="https://github.com/eben619/Celo_Africa_Dao-Ghana_University_Tour/blob/main/function.avif" width="500px"><br>
+
+<p>Functions define the behavior of a smart contract. They can be public, private, view (read-only), or payable (can receive Ether).</p>
+<pre><code>
+function getName() public pure returns (string memory) {
+    return "Solidity Mondays"; // Returns a fixed string
+}
+</code></pre>
+
+<h2>4. Variables in Solidity</h2>
+
+<h3>State Variables</h3>
+<p>State variables are permanently stored on the blockchain. They retain their values even after the contract execution ends.</p>
+<pre><code>
+contract Example {
+    uint256 public storedNumber; // A state variable stored on the blockchain
+    function setNumber(uint256 _num) public {
+        storedNumber = _num; // Updates the state variable
+    }
+}
+</code></pre>
+
+<h3>Local Variables</h3>
+<p>Local variables exist only within a function's execution scope. They do not persist on the blockchain.</p>
+<pre><code>
+function getNumber() public pure returns (uint256) {
+    uint256 localNumber = 10; // Local variable, exists only in this function
+    return localNumber;
+}
+</code></pre>
+
+<h3>Global Variables</h3>
+<p>Global variables provide blockchain-related information such as the sender's address, block number, or timestamp.</p>
+<pre><code>
+uint256 public blockNumber = block.number; // Gets the current block number
+address public sender = msg.sender; // Gets the address of the sender
+</code></pre>
+
+<h2>5. Control Structures (If-Else, Loops)</h2>
+
+<h3>If-Else Statement</h3>
+<p>The if-else statement allows conditional execution of code based on specific conditions.</p>
+<pre><code>
+function checkEven(uint256 num) public pure returns (string memory) {
+    if (num % 2 == 0) {
+        return "Even"; // Returns "Even" if the number is divisible by 2
+    } else {
+        return "Odd"; // Returns "Odd" if the number is not divisible by 2
+    }
+}
+</code></pre>
+
+<h2>6. Mappings and Structs</h2>
+
+<h3>Mappings</h3>
+<p>Mappings store key-value pairs, where keys are unique, and values can be of any type.</p>
+<pre><code>
+mapping(address => uint256) public balances; // Maps addresses to balances
+
+function updateBalance(address _user, uint256 _amount) public {
+    balances[_user] = _amount; // Updates the balance for the user
+}
+</code></pre>
+
+<h3>Structs</h3>
+<p>Structs are used to define custom data structures, grouping multiple data fields.</p>
+<pre><code>
+struct Student {
+    string name;
+    uint256 age;
+}
+
+Student public student; // Declares a student struct variable
+
+function setStudent(string memory _name, uint256 _age) public {
+    student = Student(_name, _age); // Assigns values to the student struct
+}
+</code></pre>
+
+<h2>7. Events and Logging</h2>
+<p>Events in Solidity allow logging data on the blockchain. They are mainly used to track actions like transactions or contract updates.</p>
+<pre><code>
+event UserRegistered(address indexed user, uint256 timestamp); // Declares an event
+
+function registerUser() public {
+    emit UserRegistered(msg.sender, block.timestamp); // Emits an event when a user registers
+}
+</code></pre>
+
+<h2>8. Modifiers</h2>
+<p>Modifiers define rules that must be met before executing a function. They help enforce access control and conditions.</p>
+<pre><code>
+modifier onlyOwner() {
+    require(msg.sender == owner, "Not the owner"); // Checks if the caller is the contract owner
+    _;
+}
+
+function restrictedFunction() public onlyOwner {
+    // Function logic that only the owner can execute
+}
+</code></pre>
+
+<h2>9. Payable Functions (Handling Ether)</h2>
+<p>Payable functions allow contracts to receive and send Ether. The <code>msg.value</code> property holds the amount of Ether sent.</p>
+<pre><code>
+function deposit() public payable {
+    require(msg.value > 0, "Must send some Ether"); // Ensures Ether is sent
+}
+
+function getBalance() public view returns (uint256) {
+    return address(this).balance; // Returns the contract's balance
+}
+</code></pre>
+
+
+
+
+### Materials:
+- **Book**: *Mastering Ethereum* (Chapter 7: Smart Contracts and Solidity).
+- **Practice**: Write a simple "Hello World" contract in Remix IDE.
+
+</details>
+
 <h2>Decentralized Applications (dApps)</h2>
 
 <details>
