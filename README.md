@@ -326,9 +326,7 @@ function getBalance() public view returns (uint256) {
 
 <hr />
 
-<h1>Campus Tour Workshop: Deploy Your Own Tokens</h1>
-
-<p>Welcome to our <strong> Educational Workshop</strong>! Over the next two days, you’ll learn how to create and deploy your own ERC-20 (fungible) and ERC-721 (non-fungible) tokens on the Ethereum blockchain. No prior experience is required—just bring your curiosity and enthusiasm!</p>
+<h2>Campus Tour Workshop: Deploy Your Own Tokens</h2>
 
 <hr />
 
