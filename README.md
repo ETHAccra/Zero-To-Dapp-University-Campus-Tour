@@ -154,7 +154,7 @@
 <hr />
 
 <details>
-<summary><strong>Week 2: Solidity Fundamentals</strong></summary><br>
+<summary><strong> Solidity Fundamentals</strong></summary><br>
 
 WEEK 2 PRESENTATION
 
