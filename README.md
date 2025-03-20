@@ -4,8 +4,8 @@
 
 <h3>Presentation:</h3>
 <ul>
-  <li><a href="https://remix.ethereum.org/" target="_blank">ETHAccra Presentation</a></li>
-  <li><a href="https://metamask.io/" target="_blank">Remix IDE Presentation</a></li>
+  <li><a href="https://docs.google.com/presentation/d/1GsH-hoath5B_ua9r4xmvySFhFWy9rOBe/edit?usp=sharing&ouid=109207709370381780005&rtpof=true&sd=true" target="_blank">ETHAccra Presentation</a></li>
+  <li><a href="https://docs.google.com/presentation/d/1UkdDAZYwNiS0rGIkdulOonFH6FDs4z9smaaj5iDim1s/edit#slide=id.g12e1023695a_0_0" target="_blank">Remix IDE Presentation</a></li>
   <li><a href="https://openzeppelin.com/" target="_blank">The Graph Presentation</a></li>
 </ul>
 
