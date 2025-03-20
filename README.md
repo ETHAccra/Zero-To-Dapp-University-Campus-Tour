@@ -1,5 +1,14 @@
 <div align="center" ><img width="350px" src="https://github.com/eben619/Zero-To-Dapp-Workshop/blob/main/universityOfGhana.svg"></div>
 
+<h2>Additional Resources</h2>
+
+<h3>Tools:</h3>
+<ul>
+  <li><a href="https://remix.ethereum.org/" target="_blank">Remix IDE</a>: A browser-based Solidity IDE.</li>
+  <li><a href="https://metamask.io/" target="_blank">MetaMask</a>: A crypto wallet for interacting with Ethereum.</li>
+  <li><a href="https://openzeppelin.com/" target="_blank">OpenZeppelin</a>: A library for secure smart contract development.</li>
+</ul>
+
 <h1>Introduction to Ethereum Development: Key Terms and Concepts</h1>
 
 <p>Welcome to the world of Ethereum development! This guide will introduce you to the essential terms and concepts you need to know as a beginner blockchain developer. By the end of this guide, you’ll have a solid understanding of blockchain fundamentals and Ethereum-specific concepts.</p>
@@ -301,15 +310,6 @@ contract MyNFT is ERC721 {
 </details>
 
 <hr />
-
-<h2>Additional Resources</h2>
-
-<h3>Tools:</h3>
-<ul>
-  <li><a href="https://remix.ethereum.org/" target="_blank">Remix IDE</a>: A browser-based Solidity IDE.</li>
-  <li><a href="https://metamask.io/" target="_blank">MetaMask</a>: A crypto wallet for interacting with Ethereum.</li>
-  <li><a href="https://openzeppelin.com/" target="_blank">OpenZeppelin</a>: A library for secure smart contract development.</li>
-</ul>
 
 <h3>Documentation:</h3>
 <ul>
