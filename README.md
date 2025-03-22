@@ -11,6 +11,11 @@
   <li><a href="https://docs.google.com/presentation/d/1GsH-hoath5B_ua9r4xmvySFhFWy9rOBe/edit?usp=sharing&ouid=109207709370381780005&rtpof=true&sd=true" target="_blank">ETHAccra Presentation</a></li>
   <li><a href="https://docs.google.com/presentation/d/1UkdDAZYwNiS0rGIkdulOonFH6FDs4z9smaaj5iDim1s/edit#slide=id.g12e1023695a_0_0" target="_blank">Remix IDE Presentation</a></li>
   <li><a href="https://docs.google.com/presentation/d/1k1KdmTqtT6bBCXgeMVXWxD0qcWU2VEHHZFb5T5iFs-A/edit?usp=sharing" target="_blank">The Graph Presentation</a></li>
+
+In Solidity, events are a way to log and notify external entities (such as user interfaces or other smart contracts) about specific occurrences within a smart contract.
+
+Indexing refers to a data structure that allows for faster retrieval of data by creating pointers to the location of data within a table.
+
 </ul>
 
 <h3>Tools:</h3>
