@@ -396,6 +396,181 @@ contract MyToken is ERC20 {
 
 <hr />
 
+<details>
+  <summary><h1>CryptoPunks Subgraph Deployment</h1></summary>
+
+  <h2>1. Install The Graph CLI</h2>
+  <p>Ensure you have <a href="https://thegraph.com/docs/en/developing/quick-start/">The Graph CLI</a> installed:</p>
+  <pre>
+  npm install -g @graphprotocol/graph-cli
+  </pre>
+
+  <h2>2. Initialize Your Subgraph</h2>
+  <p>Run the following command to create a new subgraph:</p>
+  <pre>
+  graph init --product hosted-service crypto-punks-subgraph --from-contract 0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB --network mainnet
+  </pre>
+
+  <p>Folder structure:</p>
+  <pre>
+  crypto-punks-subgraph/
+  │── abis/
+  │   ├── CryptoPunks.json
+  │── src/
+  │   ├── cryptoPunks.ts
+  │── schema.graphql
+  │── subgraph.yaml
+  </pre>
+
+  <h2>3. Update <code>subgraph.yaml</code></h2>
+  <p>Edit the <code>subgraph.yaml</code> file:</p>
+  <pre>
+  specVersion: 0.0.5
+  description: A subgraph to index CryptoPunks on Ethereum mainnet
+  schema:
+    file: ./schema.graphql
+  dataSources:
+    - kind: ethereum
+      name: CryptoPunks
+      network: mainnet
+      source:
+        address: "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+        abi: CryptoPunks
+        startBlock: 3914495
+      mapping:
+        kind: ethereum/events
+        apiVersion: 0.0.7
+        language: wasm/assemblyscript
+        entities:
+          - Transfer
+          - CryptoPunk
+        abis:
+          - name: CryptoPunks
+            file: ./abis/CryptoPunks.json
+        eventHandlers:
+          - event: PunkTransfer(indexed address,indexed address,indexed uint256)
+            handler: handlePunkTransfer
+          - event: PunkBought(indexed uint256,indexed uint256,indexed address)
+            handler: handlePunkBought
+        file: ./src/cryptoPunks.ts
+  </pre>
+
+  <h2>4. Define the Schema (<code>schema.graphql</code>)</h2>
+  <p>This defines the indexed data structure:</p>
+  <pre>
+  type Transfer @entity(immutable: true) {
+    id: Bytes!
+    from: Bytes!
+    to: Bytes!
+    tokenId: BigInt! 
+    blockNumber: BigInt!
+    transactionHash: Bytes!
+  }
+
+  type CryptoPunk @entity {
+    id: ID!
+    owner: Bytes!
+    punkIndex: BigInt!
+    blockNumber: BigInt!
+  }
+
+  type PunkSale @entity {
+    id: ID!
+    buyer: Bytes!
+    punkIndex: BigInt!
+    amount: BigInt!
+    blockNumber: BigInt!
+  }
+  </pre>
+
+  <h2>5. Event Handlers (<code>src/cryptoPunks.ts</code>)</h2>
+  <p>Implement event handlers in AssemblyScript:</p>
+  <pre>
+  import {
+    PunkTransfer as PunkTransferEvent,
+    PunkBought as PunkBoughtEvent,
+  } from "../generated/CryptoPunks/CryptoPunks"
+  import {
+    CryptoPunk,
+    Transfer,
+    PunkSale
+  } from "../generated/schema"
+
+  export function handlePunkTransfer(event: PunkTransferEvent): void {
+    let transfer = new Transfer(event.transaction.hash.concatI32(event.logIndex.toI32()))
+    transfer.from = event.params.from
+    transfer.to = event.params.to
+    transfer.tokenId = event.params.tokenIndex
+    transfer.blockNumber = event.block.number
+    transfer.transactionHash = event.transaction.hash
+    transfer.save()
+
+    let punk = CryptoPunk.load(event.params.tokenIndex.toString());
+    if (punk == null) {
+      punk = new CryptoPunk(event.params.tokenIndex.toString());
+    }
+    punk.owner = event.params.to;
+    punk.punkIndex = event.params.tokenIndex;
+    punk.blockNumber = event.block.number;
+    punk.save();
+  }
+
+  export function handlePunkBought(event: PunkBoughtEvent): void {
+    let sale = new PunkSale(event.transaction.hash.concatI32(event.logIndex.toI32()));
+    sale.buyer = event.params.to;
+    sale.punkIndex = event.params.tokenIndex;
+    sale.amount = event.params.amount;
+    sale.blockNumber = event.block.number;
+    sale.save();
+  }
+  </pre>
+
+  <h2>6. Create ABI File (<code>abis/CryptoPunks.json</code>)</h2>
+  <p>Get the CryptoPunks ABI from <a href="https://etherscan.io/address/0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB#code">Etherscan</a> and save it as <code>abis/CryptoPunks.json</code>.</p>
+
+  <h2>7. Deploy the Subgraph</h2>
+  <p>Run the following commands:</p>
+  <pre>
+  graph auth --product hosted-service &lt;DEPLOY_KEY&gt;
+  graph codegen
+  graph build
+  graph deploy --product hosted-service &lt;GITHUB_USERNAME&gt;/crypto-punks-subgraph
+  </pre>
+
+  <p>Replace <code>&lt;DEPLOY_KEY&gt;</code> with your The Graph API key and <code>&lt;GITHUB_USERNAME&gt;</code> with your GitHub username.</p>
+
+  <h2>8. Query Data</h2>
+  <p>Use the GraphQL Playground to fetch indexed CryptoPunks:</p>
+  <pre>
+  {
+    transfers(where: {tokenId: "999"}, orderBy: blockNumber, orderDirection: asc) {
+      id
+      tokenId
+      from
+      to
+      blockNumber
+    }
+    cryptoPunks(where: {id: "999"}) {
+      id
+      owner
+      punkIndex
+      blockNumber
+    }
+    punkSales(where: {punkIndex: "999"}) {
+      id
+      buyer
+      amount
+      blockNumber
+    }
+  }
+  </pre>
+
+  <h2>Conclusion</h2>
+  <p>This setup allows you to track CryptoPunks ownership transfers, sales, and metadata efficiently using The Graph. 🚀</p>
+
+</details>
+
+
 <h2> Deploying Your Own ERC-721 Token</h2>
 
 <details>
