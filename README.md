@@ -3,7 +3,7 @@
 <h2>Additional Resources</h2>
 <h3>Useful Links:</h3>
 <ul>
-  <li><a href="https://cloud.google.com/application/web3/faucet/ethereum/sepolia" target="_blank">Ethereum Sepolia Faucet</a></li>
+  <li><a href="https://cloud.google.com/application/web3/faucet/ethereum/sepolia" target="_blank">Ethereum Sepolia Faucet</a></li><br>
 
   Excel Sheet
 
