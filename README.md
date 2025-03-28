@@ -5,6 +5,10 @@
 <ul>
   <li><a href="https://cloud.google.com/application/web3/faucet/ethereum/sepolia" target="_blank">Ethereum Sepolia Faucet</a></li>
 
+  Excel Sheet
+
+https://docs.google.com/spreadsheets/d/1ZAkXVR__H807meA7yBuMVyklFv04hQ4ZhubhgpgWyCA/edit?usp=sharing
+
 </ul>
 <h3>Presentation:</h3>
 <ul>
