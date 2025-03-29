@@ -616,26 +616,48 @@ https://app.imintify.com/metadata
 <summary><strong>Step 2: Write the ERC-721 Contract</strong></summary>
 <p>Here’s a simple ERC-721 token contract using OpenZeppelin’s library:</p>
 
-<pre><code>// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+<pre><code>
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
+  // SPDX-License-Identifier: MIT
+// Compatible with OpenZeppelin Contracts ^5.0.0
+pragma solidity ^0.8.22;
 
-contract MyNFT is ERC721 {
-    using Counters for Counters.Counter;
-    Counters.Counter private _tokenIds;
+import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import {ERC721URIStorage} from "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
-    constructor() ERC721("MyNFT", "MNFT") {}
+contract MyToken is ERC721, ERC721URIStorage, Ownable {
+    constructor(address initialOwner)
+        ERC721("MyToken", "MTK")
+        Ownable(initialOwner)
+    {}
 
-    function mintNFT(address recipient, string memory tokenURI) public returns (uint256) {
-        _tokenIds.increment();
-        uint256 newItemId = _tokenIds.current();
-        _mint(recipient, newItemId);
-        _setTokenURI(newItemId, tokenURI);
-        return newItemId;
+    function safeMint(address to, uint256 tokenId, string memory tokenURI_) public onlyOwner {
+        _safeMint(to, tokenId);
+        _setTokenURI(tokenId, tokenURI_);  // Assign the specific URI
     }
-}</code></pre>
+
+    // Overrides required by Solidity
+    function tokenURI(uint256 tokenId)
+        public
+        view
+        override(ERC721, ERC721URIStorage)
+        returns (string memory)
+    {
+        return super.tokenURI(tokenId);
+    }
+
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        override(ERC721, ERC721URIStorage)
+        returns (bool)
+    {
+        return super.supportsInterface(interfaceId);
+    }
+}
+
+</code></pre>
 
 <h4>Explanation:</h4>
 <ul>
