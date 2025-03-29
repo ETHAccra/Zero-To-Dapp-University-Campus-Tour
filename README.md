@@ -592,6 +592,15 @@ contract MyToken is ERC20 {
   <li><strong>Owner</strong>: The address that owns a specific token.</li>
   <li><strong>Metadata</strong>: Additional information about the token (e.g., image, description).</li>
 </ul>
+
+Storage of your NFT metadata and art file. 
+
+https://pinata.cloud/
+
+Generating your metadata (json) file
+
+https://app.imintify.com/metadata
+
 </details>
 
 <details>
